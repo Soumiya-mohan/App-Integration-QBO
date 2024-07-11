@@ -58,11 +58,11 @@ Run `ngrok http 5000`
 **Authentication**
 
 QuickBooks Authorization:
-  Click the button to log in to QuickBooks.
+  Click the button 'Connect to QuickBooks'.
   Authenticate and authorize the application.
   You will be redirected back to the application, and receive the access token .
 
 Asana Authorization:
-  Click the button to log in to Asana.
+  Click the button 'Connect to Asana'.
   Authenticate and authorize the application.
   You will be redirected back to the application, and receive the access token 
