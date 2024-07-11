@@ -49,9 +49,7 @@ cd to the project directory
 
 ` pip install -r requirements.txt`
 
-Run the command for MacOS/Linux
-
-` python app.py`
+Run the command ` python app.py` for MacOS/Linux
 
 open a browser and enter http://localhost:5000
 
