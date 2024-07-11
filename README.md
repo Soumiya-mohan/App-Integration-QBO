@@ -2,9 +2,11 @@
 Proof of concept for Project Management tool integration with Quickbooks Online
 
 **The problem**
+
 Small business owners face significant challenges when managing projects and finances manually. Using separate systems - Asana for project management  and QuickBooks for accounting often leads to inefficiencies, data discrepancies, and time-consuming manual entries. This fragmented approach increases the risk of errors, delays in invoicing, and difficulty in tracking payments. The lack of integration between these tools hinders seamless workflow automation, making it hard for small businesses to scale effectively and focus on growth.
 
 **The solution**
+
 Small business owners can automate transactions between project management tools and QuickBooks, creating a seamless and efficient workflow. This proof of concept aims to highlight that this automation can be achieved through Webhooks triggers & API actions. Webhooks can trigger real-time updates, such as creating/closing tasks in Asana for order management, while API calls can automatically log and update items & invoices in QuickBooks. User security is ensured through OAuth authentication.
 This integration reduces manual data entry, minimizes errors, and ensures data consistency across platforms. Automating these processes saves time, improves accuracy, and allows small businesses to focus on growth and customer satisfaction.
 
@@ -23,6 +25,7 @@ The technical app integration for the above user flow is as follows:
 * Feedback Loop: QBO API responses mapped and sent back to Asana and posted as task
 
 **Requirements**
+
 intuit Developer account
 Asana account
 Apps on intuit and Asana (to get clientID and client SecretKey)
@@ -31,6 +34,7 @@ Asana & Quickbooks SDK
 Ngrok
 
 **Installation**
+
 * Clone the repo
     git clone https://github.com/yourusername/app-integration-abo.git
     cd app-integration-qbo
@@ -38,13 +42,15 @@ Ngrok
 * Install ngrok for Flask. Set ngrok auth token
   
 **Running the app**
+
 cd to the project directory
 **pip install -r requirements.txt**
 Run the command: python app.py for MacOS/Linux
 open a browser and enter http://localhost:5000
 Run ngrok http 5000
 
-Authentication
+**Authentication**
+
 QuickBooks Authorization:
   Click the button to log in to QuickBooks.
   Authenticate and authorize the application.
