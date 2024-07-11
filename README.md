@@ -26,12 +26,12 @@ The technical app integration for the above user flow is as follows:
 
 **Requirements**
 
-* intuit Developer account
-* Asana account
+* [intuit Developer account](https://developer.intuit.com/)
+* [asana account](https://asana.com/)
 * Apps on intuit and Asana (to get clientID and client SecretKey)
 * Python Flask
 * Asana & Quickbooks SDK
-* Ngrok
+* ngrok
 
 **Installation**
 
