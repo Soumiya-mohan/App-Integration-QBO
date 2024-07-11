@@ -37,6 +37,7 @@ Ngrok
 
 * Clone the repo
    ` git clone https://github.com/yourusername/app-integration-abo.git`
+  
    ` cd app-integration-qbo`
 * Fill in your **config.py** file values by copying over from the keys section for your app
 * Install ngrok for Flask. Set ngrok auth token
@@ -44,8 +45,10 @@ Ngrok
 **Running the app**
 
 cd to the project directory
+
 ` pip install -r requirements.txt`
 Run the command for MacOS/Linux
+
 ` python app.py`
 open a browser and enter http://localhost:5000
 Run `ngrok http 5000`
