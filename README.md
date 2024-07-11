@@ -36,6 +36,7 @@ Ngrok
 **Installation**
 
 * Clone the repo
+  
    ` git clone https://github.com/yourusername/app-integration-abo.git`
   
    ` cd app-integration-qbo`
@@ -47,6 +48,7 @@ Ngrok
 cd to the project directory
 
 ` pip install -r requirements.txt`
+
 Run the command for MacOS/Linux
 
 ` python app.py`
