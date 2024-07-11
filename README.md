@@ -52,7 +52,9 @@ cd to the project directory
 Run the command for MacOS/Linux
 
 ` python app.py`
+
 open a browser and enter http://localhost:5000
+
 Run `ngrok http 5000`
 
 **Authentication**
