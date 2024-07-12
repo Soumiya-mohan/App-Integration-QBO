@@ -35,11 +35,7 @@ The technical app integration for the above user flow is as follows:
 
 **Installation**
 
-* Clone the repo
-  
-   ` git clone https://github.com/yourusername/app-integration-abo.git`
-  
-   ` cd app-integration-qbo`
+* Clone the GitHub repo to your computer
 * Fill in your **config.py** file values by copying over from the keys section for your app
 * Install ngrok for Flask. Set ngrok auth token
   
@@ -49,11 +45,13 @@ cd to the project directory
 
 ` pip install -r requirements.txt`
 
-Run the command ` python app.py` for MacOS/Linux
+Run the command ` python3 app.py` for MacOS/Linux
+
+Run `ngrok http 5000`
 
 open a browser and enter http://localhost:5000
 
-Run `ngrok http 5000`
+
 
 **Authentication**
 
