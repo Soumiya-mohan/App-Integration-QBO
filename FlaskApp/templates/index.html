@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CRUD App</title>
+<style>
+    input[name='qbo_connect']    { 
+        
+        color: white; background-color: green; font-size:xx-large; 
+    }
+    label {
+        display: block;
+    }
+    input {
+        margin-bottom: 20px;
+    }
+    input[name='asana_connect']{
+        background-color: white; color: red; font-size: xx-large;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+    <form action='/button' method="GET">
+        <label>
+            <input type="submit" name="qbo_connect" value="Connect to quickbooks">
+        </label>
+    </form>
+    <form action='/login' method="GET">
+        <label>
+            <input type="submit" name="asana_connect" value="Connect to Asana">
+        </label>
+       
+    </form>
+    <form action='/api' method="GET">
+        <label>
+          <!--<input type="submit" name="call_asana" value="Call Asana API">-->  
+        </label>
+
+    </form>
+    <form action="/create-webhook" method="'GET">
+    <form action='/call-qbo' method="GET">
+            <label>
+              <!--<input type="submit" name="qbo_call" value="Call QBO API">-->  
+            </label>
+    </form>
+    </form>
+</body>
+</html>
