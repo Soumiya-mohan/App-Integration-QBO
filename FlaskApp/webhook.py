@@ -37,7 +37,7 @@ def createHook():
     webhooks_api_instance = asana.WebhooksApi(api_client)
     body =     { "data": {
                             "resource": "1207746538402654",
-                             "target": "https://8fd5-174-127-245-175.ngrok-free.app/receive-webhook",
+                             "target": "{0}/receive-webhook".format(config.WEBHOOK_URL),
                  "filters": [
                             {
                  "action": "changed",
@@ -52,7 +52,7 @@ def createHook():
     # Establish a webhook
         api_response = webhooks_api_instance.create_webhook(body, opts)
         print("create webhook headers")
-        
+      
         print(api_response)
         
     except ApiException as e:
