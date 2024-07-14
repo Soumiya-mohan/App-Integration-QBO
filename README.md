@@ -51,6 +51,8 @@ Run `ngrok http 5000`
 
 open a browser and enter http://localhost:5000
 
+Next, setup the webhook by running command ` python3 webhook.py` 
+
 
 
 **Authentication**
