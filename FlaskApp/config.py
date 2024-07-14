@@ -1,4 +1,4 @@
-
+hook_secret = None
 
 OAUTH2_PROVIDERS = {
     'asana': {
@@ -25,6 +25,6 @@ ASANA_GID = {
 }
 
 
-WEBHOOK_URL = 'https://2992-174-127-245-175.ngrok-free.app'
+WEBHOOK_URL = ' https://8fd5-174-127-245-175.ngrok-free.app'
 
- 
+ASANA_PTOKEN = '2/1207746425168472/1207748354223553:d9f95607af721d5a8cf8832fb4571f95'

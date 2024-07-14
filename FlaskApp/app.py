@@ -170,43 +170,14 @@ def callQbo():
 
 
 # receive events from asana
-hook_secret = None
+#hook_secret = None
 
-@app.route("/create-webhook", methods=["GET", 'POST'])
-def create_hook():
-    global hook_secret
-    configuration = asana.Configuration()
-    configuration.access_token = asana_auth['oauth2_token']
-    #configuration.access_token = '2/1207746425168472/1207748354223553:d9f95607af721d5a8cf8832fb4571f95'
-    api_client = asana.ApiClient(configuration)
-    webhooks_api_instance = asana.WebhooksApi(api_client)
-    body =     { "data": {
-                            "resource": "1207746538402654",
-                             "target": "{0}/receive-webhook".format(config.WEBHOOK_URL),
-                 "filters": [
-                            {
-                 "action": "changed",
-                "resource_type": "task"
-                }
-                             ]
-                            }} # dict | The webhook workspace and target.
-    opts = {
-    'opt_fields': "active,created_at,filters,filters.action,filters.fields,filters.resource_subtype,last_failure_at,last_failure_content,last_success_at,resource,resource.name,target", # list[str] | This endpoint returns a compact resource, which excludes some properties by default. To include those optional properties, set this query parameter to a comma-separated list of the properties you wish to include.
-     }
-    try:
-    # Establish a webhook
-        api_response = webhooks_api_instance.create_webhook(body, opts)
-        print("create webhook headers")
-        
-        pprint(api_response)
-        
-    except ApiException as e:
-        print("Exception when calling WebhooksApi->create_webhook: %s\n" % e)
-    return render_template("index.html")
+#@app.route("/create-webhook", methods=["GET", 'POST'])
+
 
 @app.route("/receive-webhook",methods=['GET','POST'])
 def webhook():
-    global hook_secret
+    config.hook_secret
     #print("Inside webhook")
     #print("Header")
     #pprint(request.headers)
@@ -215,14 +186,14 @@ def webhook():
     print("This is data",request.data)
     session['event_data'] = request.data
     if "X-Hook-Secret" in request.headers:
-        if hook_secret is not None:
+        if config.hook_secret is not None:
             app.logger.warn("Second handshake request received. This could be an attacker trying to set up a new secret. Ignoring.")
         else:
             # Respond to the handshake request :)
             app.logger.info("New webhook")
             response = make_response("", 200)
             # Save the secret for later to verify incoming webhooks
-            hook_secret = request.headers["X-Hook-Secret"]
+            config.hook_secret = request.headers["X-Hook-Secret"]
             response.headers["X-Hook-Secret"] = request.headers["X-Hook-Secret"]
             response.data = "Success"
             pprint(response.data)
@@ -235,7 +206,7 @@ def webhook():
             data_bytes = request.data.encode('ascii', 'ignore')
         else:
             data_bytes = request.data
-        signature = hmac.new(hook_secret.encode('ascii', 'ignore'),
+        signature = hmac.new(config.hook_secret.encode('ascii', 'ignore'),
                 msg=data_bytes, digestmod=hashlib.sha256).hexdigest()
         if not hmac.compare_digest(signature.encode('ascii', 'ignore'),
                 request.headers["X-Hook-Signature"].encode('ascii', 'ignore')):
