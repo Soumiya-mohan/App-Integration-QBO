@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, session, abort, make_response 
-import asana, hmac ,json , hashlib , requests
+import asana, hmac ,json , hashlib , requests , secrets
 import config
 from intuitlib.client import AuthClient
 from intuitlib.enums import Scopes
@@ -48,19 +48,19 @@ asana_auth = config.OAUTH2_PROVIDERS['asana']
 @app.route('/login',methods=['GET','POST'])
 def asanaLogin():
     global asana_auth
-    #= config.OAUTH2_PROVIDERS['asana']
+    session['state'] = secrets.token_urlsafe(16)
     qs = urlencode({
         'client_id': asana_auth['client_id'],
         'redirect_uri': asana_auth['redirect_uri'],
         'response_type': 'code',
-        'state': 'randomstring',
+        'state': session['state'],
     })
     redirect_uri = asana_auth['authorize_url'] + '?' + qs
     return redirect(redirect_uri)
 
 #asana callback
 
-#asana_auth = app.config['OAUTH2_PROVIDERS'].get('asana')
+
 @app.route('/callback/asana', methods=['GET','POST'])
 def asanaCallback():
     global asana_auth
