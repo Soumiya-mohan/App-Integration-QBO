@@ -30,7 +30,9 @@ scopes = [
 
 
 auth_url = auth_client.get_authorization_url(scopes)
-
+@app.route('/qbo-login', methods = ['GET'])
+def button():
+    return redirect(auth_url)
 
 # get qbo access token
 @app.route('/callback', methods=['GET','POST'])
@@ -257,9 +259,7 @@ def createTask():
 def home():
     return render_template('index.html')
 
-@app.route('/button', methods = ['GET'])
-def button():
-    return redirect(auth_url)
+
 
 """
 app.config['OAUTH2_PROVIDERS'] = {
