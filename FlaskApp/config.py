@@ -6,13 +6,13 @@ OAUTH2_PROVIDERS = {
         'client_secret': 'e558cdb75fc66b0e7cb7536fb4c347e4',
         'authorize_url': 'https://app.asana.com/-/oauth_authorize',
         'token_url': 'https://app.asana.com/-/oauth_token',
-        'redirect_uri':'http://localhost:5000/callback/asana',
+        'redirect_uri':'https://5000-soumiyamoha-appintegrat-ab7aoearwwe.ws-us115.gitpod.io/callback/asana',
         'oauth2_token':'None'
     },
     'quickbooks': {
         'client_id' : 'ABWPxPcJE11ljqsv2CXOStc1dFPcRXFbJWuycqEdE50croJPk8',
         'client_secret' : 'vkQZWZKJi63rDHG74g9riYYRg1Dk8W4IcD7JcmIe',
-        'redirect_uri':"http://localhost:5000/callback"
+        'redirect_uri':"https://5000-soumiyamoha-appintegrat-ab7aoearwwe.ws-us115.gitpod.io/callback"
     }
 }
 
@@ -25,6 +25,6 @@ ASANA_GID = {
 }
 
 
-WEBHOOK_URL = 'https://8fd5-174-127-245-175.ngrok-free.app'
+WEBHOOK_URL = 'https://5000-soumiyamoha-appintegrat-ab7aoearwwe.ws-us115.gitpod.io'
 
 ASANA_PTOKEN = '2/1207746425168472/1207748354223553:d9f95607af721d5a8cf8832fb4571f95'
